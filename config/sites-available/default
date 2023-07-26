@@ -1,0 +1,29 @@
+server {                                                                                                 
+        listen 80;                                                                                       
+        server_name d.iciq.cat;                                                                          
+        server_name d.iciq.es;                                                                          
+                                                                                                         
+        location / {                                                                                     
+         proxy_pass "http://127.0.0.1:1080";                                                                
+        }                                                                                                
+}
+
+server {                                                                                                 
+        listen 80;                                                                                       
+        server_name chemotion.iciq.cat;                                                                    
+        server_name chemotion.iciq.es;                                                                    
+                                                                                                         
+        location / {                                                                                     
+         proxy_pass "http://127.0.0.1:4000";                                                             
+        }                                                                                                
+}                                                                                                        
+                                                                                                         
+server {                                                                                                 
+        listen 80;                                                                                       
+        server_name echempad.iciq.cat;                                                                          
+        server_name echempad.iciq.es;                                                                          
+
+        location / {
+         proxy_pass "http://127.0.0.1:8080";
+        }
+}
